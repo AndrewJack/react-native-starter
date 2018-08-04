@@ -1,0 +1,32 @@
+platform :ios, '10.0'
+inhibit_all_warnings!
+
+target 'RNStarter' do
+  pod 'yoga', :path => "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"		
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [		
+    "Core",		
+    "CxxBridge",
+    "DevSupport",		
+    "RCTActionSheet",
+    "RCTAnimation",
+    "RCTCameraRoll",
+    "RCTGeolocation",
+    "RCTImage",
+    "RCTLinkingIOS",
+    "RCTNetwork",
+    "RCTPushNotification",
+    "RCTSettings",
+    "RCTText",
+    "RCTVibration",
+    "RCTWebSocket"
+  ]
+
+ # Third party deps podspec link
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+
+target 'RNStarterTests' do
+  inherit! :search_paths
+end
