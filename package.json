@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "flow": "flow",
     "install-ios": "rm -rf ios/Pods && pod install",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
@@ -19,6 +20,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
+    "flow-bin": "0.75.0",
     "jest": "23.4.2",
     "react-test-renderer": "16.4.2"
   },
