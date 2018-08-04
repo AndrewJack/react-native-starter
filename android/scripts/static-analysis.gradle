@@ -1,0 +1,21 @@
+apply plugin: 'checkstyle'
+
+// comment this line to remove the static analysis tasks from the build task
+check.dependsOn 'checkstyle'
+
+task checkstyle(type: Checkstyle) {
+    description 'Checks if the code passes quality standards'
+    group 'verification'
+
+    configFile file("${project(':').projectDir}/scripts/checkstyle/checkstyle.xml")
+    source 'src'
+    include '**/*.java'
+    classpath = files()
+
+    ignoreFailures false
+    showViolations true
+}
+
+checkstyle {
+    toolVersion = '7.3'
+}

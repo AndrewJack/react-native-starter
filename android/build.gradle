@@ -3,13 +3,10 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.2.0-beta05'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,17 +21,85 @@ allprojects {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
 }
 
 ext {
-    buildToolsVersion = "26.0.3"
-    minSdkVersion = 16
-    compileSdkVersion = 26
-    targetSdkVersion = 26
-    supportLibVersion = "26.1.0"
+    buildToolsVersion = "27.0.3"
+    minSdkVersion = 21
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+    supportLibVersion = "27.1.1"
+
+    frescoVersion = '1.9.0'
+    okHttpVersion = '3.10.0'
+
+    def packageVersion = getVersionArray()
+    versionMajor = packageVersion[0]
+    versionMinor = packageVersion[1]
+    versionPatch = packageVersion[2]
+
+    reactNativeVersion = getReactNativeVersion()
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                // Force all of the primary support libraries to use the same version.
+                def versionSelector = details.requested
+                if (versionSelector.group == 'com.android.support' && !versionSelector.name.contains('multidex')) {
+                    details.useVersion rootProject.ext.supportLibVersion
+                } else if (versionSelector.group == 'com.facebook.react' && versionSelector.name == 'react-native') {
+                    details.useVersion rootProject.ext.reactNativeVersion
+                } else if (versionSelector.group == 'com.squareup.okhttp3') {
+                    details.useVersion rootProject.ext.okHttpVersion
+                } else if (versionSelector.group == 'com.facebook.fresco') {
+                    details.useVersion rootProject.ext.frescoVersion
+                }
+            }
+        }
+    }
+
+    afterEvaluate { project ->
+        if (!project.name.equalsIgnoreCase("app")
+                && project.hasProperty("android")) {
+            android {
+                compileSdkVersion compileSdk
+                buildToolsVersion buildTools
+                defaultConfig {
+                    minSdkVersion minSdk
+                    targetSdkVersion targetSdk
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    group 'build'
+    delete rootProject.buildDir
+}
+
+import groovy.json.JsonSlurper
+
+def getPackageJson() {
+    def inputFile = new File(rootProject.projectDir, "../package.json")
+    return new JsonSlurper().parseText(inputFile.text)
+}
+
+def getPackageVersion() {
+    def packageJson = getPackageJson()
+    return packageJson["version"]
+}
+
+def getVersionArray() { // major [0], minor [1], patch [2]
+    def (major, minor, patch) = getPackageVersion().tokenize('.')
+    return [Integer.parseInt(major), Integer.parseInt(minor), Integer.parseInt(patch)] as int[]
+}
+
+def getReactNativeVersion() {
+    def packageJson = getPackageJson()
+    return packageJson.dependencies["react-native"].replace('^', '').replace('~', '')
 }
