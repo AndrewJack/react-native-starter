@@ -6,7 +6,9 @@
     "flow": "flow",
     "install-ios": "rm -rf ios/Pods && pod install",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "lint": "eslint . --max-warnings 0 --ext .js --ignore-path .eslintignore"
   },
   "jest": {
     "preset": "react-native"
@@ -18,10 +20,22 @@
   "devDependencies": {
     "@babel/core": "7.0.0-beta.47",
     "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "8.2.6",
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
+    "eslint": "5.3.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-flowtype": "2.50.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-node": "7.0.1",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-react": "7.10.0",
+    "eslint-plugin-standard": "3.1.0",
     "flow-bin": "0.75.0",
     "jest": "23.4.2",
+    "prettier": "1.14.0",
     "react-test-renderer": "16.4.2"
   },
   "resolutions": {

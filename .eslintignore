@@ -1,0 +1,6 @@
+/flow-typed/*
+/ios/*
+/android/*
+node_modules/*
+package.json
+scripts/
