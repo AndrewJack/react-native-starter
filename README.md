@@ -1,8 +1,8 @@
 # React Native Starter
 
-This is a starter project for creating a new app.
+This is a starter project for creating a new rn app. This project has a few tools, configs, and libraries setup which are a good start when making a rn app.
 
-A few libraries and tools are setup.
+![](https://media.giphy.com/media/GwfZdJszLAMX6/giphy.gif)
 
 ## Tools
 
