@@ -2,36 +2,24 @@
  * @flow
  */
 
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { createStackNavigator } from 'react-navigation';
 
-type Props = {};
+import { HomeScreen } from './HomeScreen';
+import { DetailsScreen } from './DetailsScreen';
 
-export class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Starter!</Text>
-      </View>
-    );
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  },
+);
+
+export class App extends React.Component<*> {
+  render(): React$Node {
+    return <RootStack />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-});
