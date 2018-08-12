@@ -1,4 +1,6 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.firebase.firebase-perf'
+//apply plugin: 'io.fabric' // TODO: enable
 
 import com.android.build.OutputFile
 
@@ -125,11 +127,43 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
     implementation "com.facebook.react:react-native:$reactNativeVersion"
+
+    // Fresco
+    implementation "com.facebook.fresco:fresco:$frescoVersion"
+    implementation "com.facebook.fresco:imagepipeline-okhttp3:$frescoVersion"
+    implementation "com.facebook.fresco:webpsupport:$frescoVersion"
+    implementation "com.facebook.fresco:animated-webp:$frescoVersion"
+    implementation "com.facebook.fresco:animated-gif:$frescoVersion"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+
+    // Firebase
+    implementation(project(':react-native-firebase')) {
+        transitive = false
+    }
+    implementation "com.google.android.gms:play-services-base:$playServicesBaseVersion"
+    implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
+    implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    implementation "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+    implementation "com.google.firebase:firebase-config:$firebaseConfigVersion"
+    implementation "com.google.firebase:firebase-perf:$firebasePerfVersion"
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive = true
+    }
 
     implementation project(':react-native-gesture-handler')
     implementation project(':react-native-code-push')
+}
+
+if (file("google-services.json").exists()) {
+    apply plugin: 'com.google.gms.google-services'
+} else {
+    android.defaultConfig {
+        resValue 'string', 'default_web_client_id', 'temp_client_id'
+    }
 }
 
 apply from: '../scripts/static-analysis.gradle'

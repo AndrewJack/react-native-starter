@@ -4,10 +4,14 @@ buildscript {
     repositories {
         mavenCentral()
         jcenter()
+        maven { url 'https://maven.fabric.io/public' }
         google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0-beta05'
+        classpath 'io.fabric.tools:gradle:1.25.4'
+        classpath 'com.google.gms:google-services:4.0.2'
+        classpath 'com.google.firebase:firebase-plugins:1.1.5'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -28,6 +32,13 @@ allprojects {
         }
         google()
     }
+
+    // Disable lint for other projects
+    tasks.whenTaskAdded { task ->
+        if (task.name.contains("lint") && !task.project.name.equals("app")) {
+            task.enabled = false
+        }
+    }
 }
 
 ext {
@@ -40,6 +51,13 @@ ext {
     jscVersion = "r224109"
     frescoVersion = '1.9.0'
     okHttpVersion = '3.10.0'
+    playServicesBaseVersion = '15.0.1'
+    tagManagerVersion = '16.0.1'
+    firebaseCoreVersion = '16.0.1'
+    firebaseAnalyticsVersion = '16.0.1'
+    firebaseMessagingVersion = '17.1.0'
+    firebaseConfigVersion = '16.0.0'
+    firebasePerfVersion = '16.0.0'
 
     def packageVersion = getVersionArray()
     versionMajor = packageVersion[0]
@@ -57,6 +75,18 @@ subprojects {
                 def versionSelector = details.requested
                 if (versionSelector.group == 'com.android.support' && !versionSelector.name.contains('multidex')) {
                     details.useVersion rootProject.ext.supportLibVersion
+                } else if (versionSelector.group == 'com.google.firebase' && versionSelector.name == 'firebase-core') {
+                    details.useVersion rootProject.ext.firebaseCoreVersion
+                } else if (versionSelector.group == 'com.google.firebase' && versionSelector.name == 'firebase-analytics') {
+                    details.useVersion rootProject.ext.firebaseAnalyticsVersion
+                } else if (versionSelector.group == 'com.google.firebase' && versionSelector.name == 'firebase-messaging') {
+                    details.useVersion rootProject.ext.firebaseMessagingVersion
+                } else if (versionSelector.group == 'com.google.firebase' && versionSelector.name == 'firebase-config') {
+                    details.useVersion rootProject.ext.firebaseConfigVersion
+                } else if (versionSelector.group == 'com.google.firebase' && versionSelector.name == 'firebase-perf') {
+                    details.useVersion rootProject.ext.firebasePerfVersion
+                } else if (versionSelector.group == 'com.google.android.gms' && versionSelector.name == 'play-services-base') {
+                    details.useVersion rootProject.ext.playServicesBaseVersion
                 } else if (versionSelector.group == 'com.facebook.react' && versionSelector.name == 'react-native') {
                     details.useVersion rootProject.ext.reactNativeVersion
                 } else if (versionSelector.group == 'com.squareup.okhttp3') {

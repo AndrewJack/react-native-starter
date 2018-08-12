@@ -27,8 +27,18 @@ target 'RNStarter' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   # Third party libraries
+  pod 'Firebase/Core', '~> 5.5.0'
+  pod 'Firebase/Analytics', '~> 5.5.0'
+  pod 'Firebase/Messaging', '~> 5.5.0'
+  pod 'Firebase/RemoteConfig', '~> 5.5.0'
+  pod 'Firebase/Performance', '~> 5.5.0'
+  pod 'Fabric', '~> 1.7.7'
+  pod 'Crashlytics', '~> 3.10.2'
+
+  # React Native Third party libraries
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
 
 end
 
