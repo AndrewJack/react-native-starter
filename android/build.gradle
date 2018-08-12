@@ -2,6 +2,7 @@
 
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
         google()
     }
@@ -15,8 +16,12 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
+        mavenCentral()
         jcenter()
+        maven {
+            // Local Maven repo containing AARs with JSC library built for Android
+            url "$rootDir/../node_modules/jsc-android/dist"
+        }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
@@ -32,6 +37,7 @@ ext {
     targetSdkVersion = 27
     supportLibVersion = "27.1.1"
 
+    jscVersion = "r224109"
     frescoVersion = '1.9.0'
     okHttpVersion = '3.10.0'
 
@@ -57,6 +63,8 @@ subprojects {
                     details.useVersion rootProject.ext.okHttpVersion
                 } else if (versionSelector.group == 'com.facebook.fresco') {
                     details.useVersion rootProject.ext.frescoVersion
+                } else if (versionSelector.group == 'org.webkit' && versionSelector.name == 'android-jsc') {
+                    details.useVersion rootProject.ext.jscVersion
                 }
             }
         }
