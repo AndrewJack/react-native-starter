@@ -126,6 +126,8 @@ android {
 dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:$reactNativeVersion"
+
+    implementation project(':react-native-gesture-handler')
 }
 
 apply from: '../scripts/static-analysis.gradle'
