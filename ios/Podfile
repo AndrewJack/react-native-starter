@@ -28,6 +28,7 @@ target 'RNStarter' do
 
   # Third party libraries
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 end
 
 target 'RNStarterTests' do
