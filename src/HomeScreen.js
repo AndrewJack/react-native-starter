@@ -19,7 +19,12 @@ export class HomeScreen extends Component<Props> {
   render(): React$Node {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this.goToDetails}>
+        <TouchableOpacity
+          accessibilityLabel="Go to details"
+          accessibilityComponentType="button"
+          accessibilityTraits="button"
+          onPress={this.goToDetails}
+        >
           <Text style={styles.welcome}>Hello this is the home screen</Text>
         </TouchableOpacity>
       </View>
@@ -36,7 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,

@@ -1,17 +1,20 @@
 {
   "extends": [
-    "standard",
     "plugin:flowtype/recommended",
+    "plugin:react-native-a11y/recommended",
     "plugin:react/recommended",
     "prettier",
     "prettier/flowtype",
     "prettier/react",
-    "prettier/standard"
+    "prettier/standard",
+    "standard"
   ],
   "plugins": [
     "flowtype",
-    "react",
     "prettier",
+    "react-native",
+    "react-native-a11y",
+    "react",
     "standard"
   ],
   "parserOptions": {
@@ -23,13 +26,39 @@
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "react-native/react-native": true
   },
   "rules": {
-    "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "parser": "flow",
-      "trailingComma": "all"
-    }]
+    "no-return-assign": 2,
+    "consistent-return": 2,
+    "comma-dangle": [2, "always-multiline"],
+    "no-extra-semi": 0,
+    "semi": 0,
+    "space-before-function-paren": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow",
+        "trailingComma": "all"
+      }
+    ],
+    "import/no-duplicates": 2,
+    "import/imports-first": 2,
+    "import/newline-after-import": 0,
+    "import/first": 0,
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "flowtype/require-return-type": [
+      1,
+      "always",
+      {
+        "annotateUndefined": "never",
+        "excludeArrowFunctions": "expressionsOnly"
+      }
+    ]
   }
 }
