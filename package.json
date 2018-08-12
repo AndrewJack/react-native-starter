@@ -17,6 +17,7 @@
     "jsc-android": "224109.1.0",
     "react": "16.4.2",
     "react-native": "0.56.0",
+    "react-native-code-push": "5.4.1",
     "react-native-gesture-handler": "1.0.7",
     "react-navigation": "2.11.2"
   },

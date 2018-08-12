@@ -3,7 +3,9 @@
  */
 
 import React from 'react';
+
 import { createStackNavigator } from 'react-navigation';
+import codePush from 'react-native-code-push';
 
 import { HomeScreen } from './HomeScreen';
 import { DetailsScreen } from './DetailsScreen';
@@ -18,8 +20,16 @@ const RootStack = createStackNavigator(
   },
 );
 
-export class App extends React.Component<*> {
+class AppBase extends React.Component<*> {
   render(): React$Node {
     return <RootStack />;
   }
 }
+
+const codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  installMode: codePush.InstallMode.ON_NEXT_RESUME,
+  minimumBackgroundDuration: 60 * 3,
+};
+
+export const App = codePush(codePushOptions)(AppBase);
