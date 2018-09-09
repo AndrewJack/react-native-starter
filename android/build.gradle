@@ -38,7 +38,7 @@ ext {
     supportLibVersion = "27.1.0"
 
     jscVersion = "r224109"
-    frescoVersion = '1.9.0'
+    frescoVersion = '1.10.0'
     okHttpVersion = '3.10.0'
 
     def packageVersion = getVersionArray()
