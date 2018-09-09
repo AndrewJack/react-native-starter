@@ -9,6 +9,8 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.microsoft.codepush.react.CodePush;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
+import com.swmansion.rnscreens.RNScreenPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,7 +34,9 @@ public class MainApplication extends Application implements ReactApplication {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
                     new CodePush("deployment-key-here", getApplicationContext(), BuildConfig.DEBUG),
-                    new RNGestureHandlerPackage()
+                    new ReanimatedPackage(),
+                    new RNGestureHandlerPackage(),
+                    new RNScreenPackage()
             );
         }
 

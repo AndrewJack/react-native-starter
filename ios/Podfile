@@ -27,8 +27,10 @@ target 'RNStarter' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   # Third party libraries
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
 end
 

@@ -4990,6 +4990,10 @@ react-native-gesture-handler@1.0.7:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-reanimated@1.0.0-alpha.8:
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.8.tgz#12a11ce8a51cb1df269b22d40f0e492f2fe23443"
+
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.7.0.tgz#38f5ab9368d6ef9e5d18ab64212938af3ec39421"
@@ -5001,6 +5005,10 @@ react-native-safe-area-view@^0.8.0:
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.8.0.tgz#22d78cb8e8658d04a10cd53c1546e0bc86cb7aea"
   dependencies:
     hoist-non-react-statics "^2.3.1"
+
+react-native-screens@1.0.0-alpha.6:
+  version "1.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.6.tgz#f0684c8bed2b6d739b058fff4fe47ab28aa65e8f"
 
 react-native-tab-view@^0.0.77:
   version "0.0.77"
