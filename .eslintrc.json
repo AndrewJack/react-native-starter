@@ -60,5 +60,15 @@
         "excludeArrowFunctions": "expressionsOnly"
       }
     ]
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
+    "react": {
+      "pragma": "React",
+      "version": "16.5",
+      "flowVersion": "0.78"
+    }
   }
 }
