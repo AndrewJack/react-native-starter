@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
     "flow": "flow",
     "install-ios": "rm -rf ios/Pods && pod install",
+    "lint": "eslint . --max-warnings 0 --ext .js --ignore-path .eslintignore",
+    "postinstall": "./scripts/post-install.sh",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
-    "lint": "eslint . --max-warnings 0 --ext .js --ignore-path .eslintignore"
+    "test": "jest"
   },
   "jest": {
     "preset": "react-native"
@@ -19,6 +20,8 @@
     "react-native": "0.56.0",
     "react-native-code-push": "5.4.1",
     "react-native-gesture-handler": "1.0.7",
+    "react-native-reanimated": "1.0.0-alpha.8",
+    "react-native-screens": "1.0.0-alpha.6",
     "react-navigation": "2.11.2"
   },
   "devDependencies": {

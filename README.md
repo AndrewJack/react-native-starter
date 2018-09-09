@@ -27,8 +27,8 @@ This is a starter project for creating a new rn app. This project has a few tool
 * React Navigation
 * Gesture handler
 * Reanimated
+* RNScreens
 * CodePush
-* Firebase
 
 License
 -------
