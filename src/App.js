@@ -4,11 +4,14 @@
 
 import React from 'react';
 
+import { useScreens } from 'react-native-screens';
 import { createStackNavigator } from 'react-navigation';
 import codePush from 'react-native-code-push';
 
 import { HomeScreen } from './HomeScreen';
 import { DetailsScreen } from './DetailsScreen';
+
+useScreens();
 
 const RootStack = createStackNavigator(
   {
