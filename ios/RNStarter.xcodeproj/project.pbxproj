@@ -338,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export BUNDLE_COMMAND=\"ram-bundle\"\nexport BUNDLE_CONFIG=\"../scripts/packager-config.js\"\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export BUNDLE_COMMAND=\"ram-bundle\"\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
 		16EE4A2147D69FEB7F6631DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
