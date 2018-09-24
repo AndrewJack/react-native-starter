@@ -73,9 +73,9 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-        entryFile: "index.js"
+        entryFile: "index.js",
         bundleCommand: "ram-bundle",
-        extraPackagerArgs: ["--indexed-ram-bundle"],
+        extraPackagerArgs: ["--indexed-ram-bundle"]
 ]
 
 apply from: "../scripts/react.gradle"
