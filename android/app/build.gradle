@@ -74,8 +74,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         entryFile: "index.js",
-        bundleCommand: "ram-bundle",
-        extraPackagerArgs: ["--indexed-ram-bundle"]
+        bundleCommand: "ram-bundle"
 ]
 
 apply from: "../scripts/react.gradle"
@@ -107,6 +106,7 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
