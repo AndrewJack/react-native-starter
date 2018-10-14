@@ -10,7 +10,7 @@ import com.facebook.soloader.SoLoader;
 import com.microsoft.codepush.react.CodePush;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
-import com.swmansion.rnscreens.RNScreenPackage;
+import com.swmansion.rnscreens.RNScreensPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,12 +31,12 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-            return Arrays.<ReactPackage>asList(
+            return Arrays.asList(
                     new MainReactPackage(),
                     new CodePush("deployment-key-here", getApplicationContext(), BuildConfig.DEBUG),
                     new ReanimatedPackage(),
                     new RNGestureHandlerPackage(),
-                    new RNScreenPackage()
+                    new RNScreensPackage()
             );
         }
 
