@@ -5,7 +5,7 @@
 import React from 'react';
 
 import { useScreens } from 'react-native-screens';
-import { createStackNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import codePush from 'react-native-code-push';
 
 import { HomeScreen } from './HomeScreen';
@@ -23,9 +23,11 @@ const RootStack = createStackNavigator(
   },
 );
 
+const AppContainer = createAppContainer(RootStack);
+
 class AppBase extends React.Component<*> {
   render(): React$Node {
-    return <RootStack />;
+    return <AppContainer />;
   }
 }
 
