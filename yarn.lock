@@ -6047,6 +6047,13 @@ react-native-gesture-handler@~1.0.14:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-hooks@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/react-native-hooks/-/react-native-hooks-0.0.6.tgz#cc3ae92cc9c964f158f29ea0e7b502154907933c"
+  integrity sha512-SLB0H3n/SuRD/dEEntKprlPEp2WTF1NLQYO4SqDto0wjEvFJTmIU86QGhPxHSNndvdebniSnVohnexSaSirJVw==
+  dependencies:
+    react "^16.7.0-alpha.0"
+
 react-native-reanimated@1.0.0-alpha.12:
   version "1.0.0-alpha.12"
   resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.12.tgz#535c84a9e87c919417aee0fa68f360b3bb9556b0"
@@ -6198,7 +6205,7 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.8.4:
+react@16.8.4, react@^16.7.0-alpha.0:
   version "16.8.4"
   resolved "https://registry.npmjs.org/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
   integrity sha512-0GQ6gFXfUH7aZcjGVymlPOASTuSjlQL4ZtVC5YKH+3JL6bBLCVO21DknzmaPlI90LN253ojj02nsapy+j7wIjg==

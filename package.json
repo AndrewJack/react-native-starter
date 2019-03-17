@@ -20,6 +20,7 @@
     "react-native": "0.59.1",
     "react-native-code-push": "5.5.3",
     "react-native-gesture-handler": "1.1.0",
+    "react-native-hooks": "0.0.6",
     "react-native-reanimated": "1.0.0-alpha.12",
     "react-native-screens": "1.0.0-alpha.22",
     "react-navigation": "3.4.1",
