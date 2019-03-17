@@ -94,7 +94,7 @@ android {
     splits {
         abi {
             reset()
-            enable false // TODO: enable soon
+            enable true
             universalApk true
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
