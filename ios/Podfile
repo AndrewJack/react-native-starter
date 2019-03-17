@@ -2,13 +2,14 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 target 'RNStarter' do
-  pod 'yoga', :path => "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"		
+  # React Native pods
   pod 'React', :path => '../node_modules/react-native', :subspecs => [		
     "Core",		
     "CxxBridge",
     "DevSupport",		
     "RCTActionSheet",
     "RCTAnimation",
+    "RCTBlob",
     "RCTCameraRoll",
     "RCTGeolocation",
     "RCTImage",
@@ -20,8 +21,7 @@ target 'RNStarter' do
     "RCTVibration",
     "RCTWebSocket"
   ]
-
- # Third party deps podspec link
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
