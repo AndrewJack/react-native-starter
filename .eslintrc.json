@@ -12,8 +12,9 @@
   "plugins": [
     "flowtype",
     "prettier",
-    "react-native",
+    "react-hooks",
     "react-native-a11y",
+    "react-native",
     "react",
     "standard"
   ],
@@ -48,6 +49,9 @@
     "import/imports-first": 2,
     "import/newline-after-import": 0,
     "import/first": 0,
+    "react/sort-comp": 2,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,

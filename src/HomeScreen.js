@@ -16,6 +16,10 @@ export class HomeScreen extends Component<Props> {
     title: 'Home',
   };
 
+  goToDetails = () => {
+    this.props.navigation.navigate('Details');
+  };
+
   render(): React$Node {
     return (
       <View style={styles.container}>
@@ -30,10 +34,6 @@ export class HomeScreen extends Component<Props> {
       </View>
     );
   }
-
-  goToDetails = () => {
-    this.props.navigation.navigate('Details');
-  };
 }
 
 const styles = StyleSheet.create({
