@@ -28,7 +28,7 @@ target 'RNStarter' do
 
   # Third party libraries
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
