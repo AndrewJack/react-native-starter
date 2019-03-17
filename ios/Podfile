@@ -1,6 +1,17 @@
 platform :ios, '10.0'
 inhibit_all_warnings!
 
+# Fix for Xcode 10 https://github.com/CocoaPods/CocoaPods/issues/8069#issuecomment-420044112
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 10.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+      end
+    end
+  end
+end
+
 target 'RNStarter' do
   # React Native pods
   pod 'React', :path => '../node_modules/react-native', :subspecs => [		
