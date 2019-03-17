@@ -1,14 +1,26 @@
 platform :ios, '10.0'
 inhibit_all_warnings!
 
+# Fix for Xcode 10 https://github.com/CocoaPods/CocoaPods/issues/8069#issuecomment-420044112
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 10.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+      end
+    end
+  end
+end
+
 target 'RNStarter' do
-  pod 'yoga', :path => "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"		
+  # React Native pods
   pod 'React', :path => '../node_modules/react-native', :subspecs => [		
     "Core",		
     "CxxBridge",
     "DevSupport",		
     "RCTActionSheet",
     "RCTAnimation",
+    "RCTBlob",
     "RCTCameraRoll",
     "RCTGeolocation",
     "RCTImage",
@@ -20,15 +32,14 @@ target 'RNStarter' do
     "RCTVibration",
     "RCTWebSocket"
   ]
-
- # Third party deps podspec link
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   # Third party libraries
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler/ios'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
