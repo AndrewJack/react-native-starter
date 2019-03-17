@@ -2,8 +2,9 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import type { NavigationScreenProp } from 'react-navigation';
 
@@ -11,29 +12,19 @@ type Props = {
   navigation: NavigationScreenProp,
 };
 
-export class HomeScreen extends Component<Props> {
-  static navigationOptions = {
-    title: 'Home',
-  };
-
-  goToDetails = () => {
-    this.props.navigation.navigate('Details');
-  };
-
-  render(): React$Node {
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity
-          accessibilityLabel="Go to details"
-          accessibilityComponentType="button"
-          accessibilityTraits="button"
-          onPress={this.goToDetails}
-        >
-          <Text style={styles.welcome}>Hello this is the home screen</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+export function HomeScreen(props: Props): React$Node {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        accessibilityLabel="Go to details"
+        accessibilityComponentType="button"
+        accessibilityTraits="button"
+        onPress={() => props.navigation.navigate('Details')}
+      >
+        <Text style={styles.welcome}>Hello this is the home screen</Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
