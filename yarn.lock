@@ -855,7 +855,7 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
-"@react-native-community/cli-platform-android@^2.0.1", "@react-native-community/cli-platform-android@^2.7.0":
+"@react-native-community/cli-platform-android@2.7.0", "@react-native-community/cli-platform-android@^2.0.1", "@react-native-community/cli-platform-android@^2.7.0":
   version "2.7.0"
   resolved "https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-2.7.0.tgz#511d1db12c52d29cb87b6e4e84d63030ffa2c38d"
   integrity sha512-hO/gYqzLCeCFnLIgYiGlZhiQMAnMuTxNS6rCbC8leMnlGARzrarnWsepHhvottOKeSctVh0wzchLCLCBcw4zVA==
@@ -868,7 +868,7 @@
     slash "^2.0.0"
     xmldoc "^0.4.0"
 
-"@react-native-community/cli-platform-ios@^2.0.1", "@react-native-community/cli-platform-ios@^2.7.0":
+"@react-native-community/cli-platform-ios@2.7.0", "@react-native-community/cli-platform-ios@^2.0.1", "@react-native-community/cli-platform-ios@^2.7.0":
   version "2.7.0"
   resolved "https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-2.7.0.tgz#a1e7af6141136da7a0b3f477426bea889a931a17"
   integrity sha512-x3bJWyd1viszgZxTKa/L247WDHFnQCFv+X9Kdwiqu6S+smyuF9CnS3mEHQZ7BqZDa+VIDJI29iKQKdvqW83iEA==
@@ -887,7 +887,7 @@
     mime "^2.4.1"
     node-fetch "^2.5.0"
 
-"@react-native-community/cli@^2.0.1":
+"@react-native-community/cli@2.7.0", "@react-native-community/cli@^2.0.1":
   version "2.7.0"
   resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-2.7.0.tgz#d392b6f6092c7fc8da05982f38bd626db4799a10"
   integrity sha512-53S+z7YyMA1WMigQP7oEgSUIJkDp8SxE7MCXQXosnVRkPuPKkPoL/W6KY/wQZa7dES4SdlkrFbc4AgRz/R+B3Q==
@@ -3991,7 +3991,7 @@ jest@24.8.0:
     import-local "^2.0.0"
     jest-cli "^24.8.0"
 
-jetifier@^1.6.2:
+jetifier@1.6.3, jetifier@^1.6.2:
   version "1.6.3"
   resolved "https://registry.npmjs.org/jetifier/-/jetifier-1.6.3.tgz#61a95b29aefddfe3b6d81ee956f5e99f8b9cba19"
   integrity sha512-i0rb2nHVPZDPzFhgs9+yYxEDMh2z0iSHRD3vBQmvn98wlgWKwhmU2F3MUEEXfK+MLnKwLKqsCTvlcS1+CpDTUg==
